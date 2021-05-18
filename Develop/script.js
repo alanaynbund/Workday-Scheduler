@@ -65,6 +65,16 @@ $(".time-block").each(function() {
     var timeDiv = parseInt(
         $(this)
         .attr("id")
-        
-    )
+        .split("-")[1]
+    );
+
+    if (timeDiv < time) {
+        $(this).find("textarea").addClass("future")
+    }
+    else if (timeDiv == time) {
+        $(this).find("textarea").addClass("present")
+    }
+    else {
+        $(this).find("input").addClass("past");
+    }
 })
