@@ -11,7 +11,7 @@ $("#btn10").on("click", function() {
     localStorage.setItem("10:00", text);
 });
 
-$(".btn11").on("click", function() {
+$("#btn11").on("click", function() {
     var text = $("#txt11").val();
     localStorage.setItem("11:00", text);
 });
@@ -27,7 +27,7 @@ $("#btn1").on("click", function() {
 });
 
 $("#btn2").on("click", function() {
-    var text = $(".txt2").val();
+    var text = $("#txt2").val();
     localStorage.setItem("2:00", text);
 });
 
