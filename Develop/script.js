@@ -59,19 +59,21 @@ $("#txt4").val(localStorage.getItem("4:00"));
 $("#txt5").val(localStorage.getItem("5:00"));
 
 
-var auditTask = function (textarea) {
-    var date= $(textarea).find("textarea").text().trim();
-  
-    var time = moment(date, "L").set("hour", 17);
-  
-  
-    if (moment().isAfter(time)){
-      $(textarea).addClass ("future");
-    }
-    else if (moment().isBefore(time)) {
-      $(textarea).addClass("past");
-    }
-  };
+var timeNow = parseInt(moment().format('HH'));
 
-  auditTask();
-  
+$("textarea").each(function () {
+    var name = parseInt($(this).attr("name"));
+    if (name < timeNow) {
+        $(this).addClass("past");
+    }
+
+
+    if (name > timeNow) {
+        $(this).addClass("future")
+    }
+
+    if (name === timeNow) {
+        $(this).addClass("present")
+    }
+
+});
