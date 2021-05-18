@@ -57,3 +57,14 @@ $("#txt2").val(localStorage.getItem("2:00"));
 $("#txt3").val(localStorage.getItem("3:00"));
 $("#txt4").val(localStorage.getItem("4:00"));
 $("#txt5").val(localStorage.getItem("5:00"));
+
+
+var time = parseInt(moment().format("HH"));
+
+$(".time-block").each(function() {
+    var timeDiv = parseInt(
+        $(this)
+        .attr("id")
+        
+    )
+})
