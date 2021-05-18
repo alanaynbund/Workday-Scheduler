@@ -59,22 +59,19 @@ $("#txt4").val(localStorage.getItem("4:00"));
 $("#txt5").val(localStorage.getItem("5:00"));
 
 
-var time = parseInt(moment().format("HH"));
+var auditTask = function (textarea) {
+    var date= $(textarea).find("textarea").text().trim();
+  
+    var time = moment(date, "L").set("hour", 17);
+  
+  
+    if (moment().isAfter(time)){
+      $(textarea).addClass ("future");
+    }
+    else if (moment().isBefore(time)) {
+      $(textarea).addClass("past");
+    }
+  };
 
-$(".time-block").each(function() {
-    var timeDiv = parseInt(
-        $(this)
-        .attr("id")
-        .split("-")[1]
-    );
-
-    if (timeDiv < time) {
-        $(this).find("textarea").addClass("future")
-    }
-    else if (timeDiv == time) {
-        $(this).find("textarea").addClass("present")
-    }
-    else {
-        $(this).find("input").addClass("past");
-    }
-})
+  auditTask();
+  
