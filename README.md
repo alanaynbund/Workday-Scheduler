@@ -10,4 +10,8 @@ I made a workday scheduler where the time-blocks are color-coded in the past,pre
 
 # Screenshots
 
+<<<<<<< HEAD
 [](/Develop/work1.png)
+=======
+[1](/Develop/work1.png)
+>>>>>>> 52bc12184e1c7d6992b0099abab904974a030677
