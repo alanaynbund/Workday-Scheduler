@@ -75,5 +75,4 @@ $("textarea").each(function () {
     if (name === timeNow) {
         $(this).addClass("present")
     }
-
 });
